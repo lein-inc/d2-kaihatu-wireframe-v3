@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 TOKEN="$1"; MSG="${2:-WF更新}"
 [ -z "$TOKEN" ] && { echo "usage: _publish.sh <github_token> [message]"; exit 1; }
 rsync -a --delete \
-  --exclude='.git/' --exclude='_publish.sh' --exclude='.nojekyll' --exclude='captures/' --exclude='_v3/' \
+  --exclude='.git/' --exclude='.github/' --exclude='_publish.sh' --exclude='.nojekyll' --exclude='captures/' --exclude='_v3/' \
   --exclude='_build.py' --exclude='_inject_gate.py' --exclude='_auth_gate.html' --exclude='_d2_*.py' --exclude='__pycache__/' \
   --exclude='CHANGELOG.md' --exclude='.gitignore' --exclude='引き継ぎ_*.md' --exclude='.DS_Store' \
   /Users/apple/site/dainigikou/wf/ ./
