@@ -142,3 +142,4 @@ html .v31b :is(.pill, .btn, button[type="submit"], input[type="submit"]) { borde
 .v31b :is(section.tone, section[style*="F7F9FB"]) .dcard:hover { background:var(--k-acc); }
 .v31b.d2-sub form .req { background:var(--k-acc); color:#fff; }
 @media (max-width:900px){ .v31b .phero__bar { align-items:flex-start; } }
+.v31b .is-logo img, .v31b .is-logo:hover img { filter:none !important; }

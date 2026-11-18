@@ -208,3 +208,12 @@
 
 .d2-sub .form-row input:is([type="radio"], [type="checkbox"]) { width: 18px; height: 18px; padding: 0; margin: 0; flex: none; }
 @media (max-width: 760px) { .steps[style*="repeat(3"] { grid-template-columns: 1fr !important; } }
+
+/* ---------- 11/18 採用TOP：ページ内メニュー（sibnav を流用）＋よくある質問の分類見出し ---------- */
+.sibnav.pnav a { padding-left: 13px; padding-right: 13px; font-size: 13.5px; letter-spacing: .02em; }
+.sibnav.pnav a.entry { padding-left: 22px; padding-right: 22px; }
+#jobs, #career, #first-step, #support, #people, #day, #requirements, #flow, #faq { scroll-margin-top: 180px; }
+.qa-cat { display: flex; align-items: baseline; gap: 14px; margin: 56px 0 6px; font-size: 18px; font-weight: 700; letter-spacing: .06em; }
+.sec-head + .qa-cat { margin-top: 8px; }
+.qa-cat .en { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+@media (max-width: 900px) { #jobs, #career, #first-step, #support, #people, #day, #requirements, #flow, #faq { scroll-margin-top: 120px; } .qa-cat { margin-top: 40px; font-size: 16px; } }

@@ -166,3 +166,5 @@ html .v31c :is(.pill, .btn, button[type="submit"], input[type="submit"]) { borde
 .v31c .pill .circ { order:-1; }
 .v31c div[style*="padding:8px 16px"][style*="background:#F7F9FB"] { background:transparent !important; color:#BDBDBD !important; box-shadow:inset 0 0 0 1px rgba(255,255,255,.3); }
 .v31c div[style*="padding:8px 16px"][style*="background:#333"] { background:#fff !important; color:#111 !important; }
+.v31c .tone .tabs button.on, .v31c [style*="F7F9FB"] .tabs button.on { background:#111; color:#fff; }
+.v31c .is-logo img, .v31c .is-logo:hover img { filter:none !important; }
