@@ -221,3 +221,10 @@ body.v31b { background:#fff; }
   .v31b .site-footer .wrap > div:first-child { grid-column:1 / -1; }
 }
 @media (max-width:600px){ .v31b .site-footer .wrap { grid-template-columns:1fr; } }
+
+/* SP：v3 の白地用の文字の光彩（ぼかし影）を消す／フッターのリンクは2列 */
+.v31b .hero-copy h1, .v31b .hero-copy .en-label { text-shadow:none; }
+@media (max-width:600px){
+  .v31b .site-footer .wrap { grid-template-columns:1fr 1fr; gap:34px 20px; }
+  .v31b .site-footer .wrap > div:first-child { grid-column:1 / -1; }
+}

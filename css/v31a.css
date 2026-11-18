@@ -129,3 +129,6 @@
   .v31a .rec-photo .circ-photo { left:auto; right:12px; bottom:-40px; width:130px; height:130px; }
   .v31a .news-flex { grid-template-columns:1fr; }
 }
+
+/* CTA・フッターを固定の3D背景より前に（v3 の .service ~ footer の指定が land31 の外には効かないため） */
+.v31a .cta3, .v31a .site-footer, .v31a footer { position:relative; z-index:2; }

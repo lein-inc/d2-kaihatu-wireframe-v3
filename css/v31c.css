@@ -39,12 +39,12 @@ body.v31c { background:var(--s-bg); }
 .v31c .s-txt { font-size:14.5px; line-height:2; color:#BDBDBD; max-width:620px; margin-bottom:20px; }
 .v31c .s-txt--dk { color:#4A4A4A; }
 .v31c .s-txt--w { color:#BDBDBD; }
-.v31c .s-btn { display:inline-flex; align-items:center; gap:14px; margin-top:22px; padding:8px 26px 8px 8px; border:1px solid rgba(255,255,255,.35); color:#fff; font-size:14px;
+.v31c .s-btn { display:inline-flex; align-items:center; gap:14px; margin-top:22px; padding:8px 26px 8px 8px; background:rgba(255,255,255,.1); color:#fff; font-size:14px;
   clip-path:polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); transition:background .3s, color .3s; }
 .v31c .s-btn i { display:grid; place-items:center; width:34px; height:34px; background:#fff; color:#111; font-style:normal; font-family:"Inter",sans-serif; transition:transform .3s;
   clip-path:polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px); }
 .v31c .s-btn:hover { background:#fff; color:#111; } .v31c .s-btn:hover i { background:var(--s-acc); transform:translateX(3px); }
-.v31c .s-btn--dk { color:#1E1E1E; border-color:rgba(0,0,0,.3); } .v31c .s-btn--dk i { background:#1E1E1E; color:#fff; }
+.v31c .s-btn--dk { color:#1E1E1E; background:rgba(0,0,0,.07); } .v31c .s-btn--dk i { background:#1E1E1E; color:#fff; }
 .v31c .s-btn--dk:hover { background:#1E1E1E; color:#fff; }
 
 /* 網点（ハーフトーン）：白い点の地を形で切り抜く */
@@ -229,3 +229,20 @@ body.v31c { background:var(--s-bg); }
   .v31c .site-footer .wrap { padding:40px 20px 0; gap:30px; }
   .v31c .site-footer .wrap > div:not(.copyright) { padding:0; border-left:none; }
 }
+
+/* SP：v3 の白地用の文字の光彩（ぼかし影）を消す／巨大ワードマークを画面幅に収める／フッターのリンクは2列 */
+.v31c .hero-copy h1, .v31c .hero-copy .en-label { text-shadow:none; }
+@media (max-width:900px){
+  .v31c .s-hero-word, .v31c .s-word { font-size:12.4vw; }
+  .v31c .s-hero-word { position:static; margin-top:34px; }
+}
+@media (max-width:600px){
+  .v31c .site-footer .wrap { grid-template-columns:1fr 1fr; gap:34px 20px; }
+  .v31c .site-footer .wrap > div:first-child { grid-column:1 / -1; }
+}
+
+/* 11/18 工程ごとに形を変える（01=左から伸びる / 02=不規則な波形 / 03=下に広がる積み上げ / 04=そろった層） */
+.v31c .s-step__bars--l { align-items:flex-start; }
+.v31c .s-step__bars--r { align-items:flex-end; }
+.v31c .s-step__bars--r i { width:var(--w); opacity:.22; }
+.v31c .s-step.is-on .s-step__bars--r i { opacity:1; }
