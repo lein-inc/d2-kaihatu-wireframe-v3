@@ -244,5 +244,13 @@ body.v31c { background:var(--s-bg); }
 /* 11/18 工程ごとに形を変える（01=左から伸びる / 02=不規則な波形 / 03=下に広がる積み上げ / 04=そろった層） */
 .v31c .s-step__bars--l { align-items:flex-start; }
 .v31c .s-step__bars--r { align-items:flex-end; }
-.v31c .s-step__bars--r i { width:var(--w); opacity:.22; }
-.v31c .s-step.is-on .s-step__bars--r i { opacity:1; }
+/* 04 残す＝下の層から順に右から伸びて積み重なる（止まった形は常にそろった箱） */
+.v31c .s-step__bars--r i { width:calc(var(--w) * .3); opacity:.22; transition:width .9s cubic-bezier(.2,.8,.2,1), opacity .6s; }
+.v31c .s-step.is-on .s-step__bars--r i { width:var(--w); opacity:1; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(7) { transition-delay:0s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(6) { transition-delay:.09s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(5) { transition-delay:.18s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(4) { transition-delay:.27s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(3) { transition-delay:.36s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(2) { transition-delay:.45s; }
+.v31c .s-step.is-on .s-step__bars--r i:nth-child(1) { transition-delay:.54s; }
