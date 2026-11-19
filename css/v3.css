@@ -237,3 +237,28 @@
   .svc-div__head .en { margin-left: 0; width: 100%; }
   #svc-top, #survey, #design, #management { scroll-margin-top: 120px; }
 }
+
+/* ---------- 11/19 関指示：共通の体裁調整（_v3/apply_1119_heading_cleanup.py と対） ---------- */
+/* 見出し下・下層ヘッダーの英字は使わない（HTMLからも削除済み。残っても出さない） */
+.d2-sub :is(.sec-h .en, .sec-head .en-label), .phero__en, .phero__ph .en, .svc-div__head .en { display: none !important; }
+/* アウトライン文字：Inter（可変）は字形の輪郭が重なって線が見えるので、重なりのない Archivo 800 に */
+.bg-word, .dcard .no, .job .no, .svc-card .no { font-family: "Archivo", "Inter", sans-serif !important; font-weight: 800 !important; }
+/* 下層ヘッダー：左に見出し、右に写真の2カラムでコンパクトに */
+@media (min-width: 901px) {
+  .d2-sub .phero.v3 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); align-items: center; padding-top: clamp(36px, 3.6vw, 52px); }
+  .d2-sub .phero.v3 > .wrap { max-width: none; margin: 0; padding: 0 clamp(28px, 3vw, 48px) 0 var(--wrap-pad); }
+  .d2-sub .phero.v3 .pcrumb { margin-bottom: 18px; }
+  .d2-sub .phero.v3 .phero__bar { padding-bottom: 0; }
+  .d2-sub .phero.v3 h1 { font-size: clamp(34px, 3.8vw, 58px); }
+  .d2-sub .phero.v3 .phero__lead { margin-top: 18px; font-size: 14.5px; }
+  .d2-sub .phero.v3 .phero__ph { margin: 0; height: clamp(220px, 21vw, 320px); }
+}
+@media (max-width: 900px) {
+  .d2-sub .phero.v3 .phero__ph { margin-top: 28px; height: clamp(160px, 42vw, 240px); }
+}
+/* グローバルナビ：現在地のページは常に青文字＋下線 */
+.gnav a.cur { color: var(--blue); }
+.gnav a.cur::after { right: 0; }
+/* パンくず上の余白を詰める */
+.d2-sub .phero.v3 { padding-top: 28px; }
+@media (max-width: 900px) { .d2-sub .phero.v3 { padding-top: 20px; } .d2-sub .phero.v3 .pcrumb { margin-bottom: 14px; } }
