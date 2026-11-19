@@ -264,3 +264,44 @@
 @media (max-width: 900px) { .d2-sub .phero.v3 { padding-top: 20px; } .d2-sub .phero.v3 .pcrumb { margin-bottom: 14px; } }
 /* ページ内メニュー（sibnav / section-nav）：上にも下と同じ薄い罫線 */
 .sibnav, .d2-sub .section-nav { border-top: 1px solid var(--border); }
+
+/* ---------- 11/19 上部のWF帯（DESIGN v3 | … ← 一覧に戻る）を全ページで削除 → 追従位置を詰める ---------- */
+.site-header { top: 0; }
+.sibnav, .section-nav { top: 90px; }
+#jobs, #career, #first-step, #support, #people, #day, #requirements, #flow, #faq, #svc-top, #survey, #design, #management { scroll-margin-top: 150px; }
+@media (max-width: 900px) { .sibnav, .section-nav { top: 70px; } }
+
+/* ---------- 11/19 SPのハンバーガー（js/spnav.js）：電話番号の右 ---------- */
+.sp-burger, .sp-drawer { display: none; }
+@media (max-width: 900px) {
+  .site-header .wrap { padding-right: 8px; }
+  .tel-box { padding: 0 10px 0 12px; }
+  .sp-burger {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px; flex-shrink: 0;
+    width: 44px; height: 44px; padding: 0 12px; border: 0; cursor: pointer; background: var(--blue);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+  }
+  .sp-burger span { display: block; height: 2px; background: #fff; transition: transform .25s var(--ease), opacity .2s; }
+  .sp-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .sp-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .sp-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .sp-drawer {
+    display: block; position: fixed; inset: 0; z-index: 999; overflow-y: auto; background: #fff;
+    padding: 96px 24px 48px; visibility: hidden; opacity: 0; transform: translateY(-12px);
+    transition: opacity .25s, transform .25s var(--ease), visibility 0s .25s;
+  }
+  .sp-drawer.is-open { visibility: visible; opacity: 1; transform: none; transition: opacity .25s, transform .25s var(--ease); }
+  .sp-drawer .l { display: flex; justify-content: space-between; align-items: center; padding: 17px 2px; border-bottom: 1px solid var(--border); font-size: 16px; font-weight: 700; letter-spacing: .04em; color: var(--txt); }
+  .sp-drawer .l i { font-style: normal; color: var(--blue); }
+  .sp-drawer .l.cur { color: var(--blue); }
+  .sp-drawer .rec { display: block; margin-top: 30px; padding: 17px; text-align: center; font-weight: 700; background: var(--yellow); color: #3A2B00; clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px); }
+  .sp-drawer .tel { display: block; margin-top: 26px; text-align: center; font-family: "Inter", sans-serif; font-size: 24px; font-weight: 800; color: var(--blue); line-height: 1.5; }
+  .sp-drawer .tel small { display: block; font-family: "Noto Sans JP", sans-serif; font-size: 12px; font-weight: 500; color: var(--txt-2); }
+  html.sp-open, html.sp-open body { overflow: hidden; }
+}
+@media (max-width: 900px) {
+  .site-header .wrap { padding-left: 14px; padding-right: 8px; gap: 8px; }
+  .site-logo img { height: 26px; }
+  .tel-box { padding: 0 8px; }
+  .tel-box .tel-num { font-size: 15px; }
+}
