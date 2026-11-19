@@ -305,3 +305,17 @@
   .tel-box { padding: 0 8px; }
   .tel-box .tel-num { font-size: 15px; }
 }
+/* SPメニュー：メニューの中にも閉じるボタン（右上の×＋下の「閉じる」） */
+.sp-close, .sp-close2 { display: none; }
+@media (max-width: 900px) {
+  .sp-close {
+    display: block; position: fixed; top: 18px; right: 18px; z-index: 2; width: 44px; height: 44px; border: 0; cursor: pointer;
+    background: var(--blue); clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+  }
+  .sp-close span { position: absolute; left: 12px; right: 12px; top: 21px; height: 2px; background: #fff; }
+  .sp-close span:nth-child(1) { transform: rotate(45deg); }
+  .sp-close span:nth-child(2) { transform: rotate(-45deg); }
+  .sp-close2 { display: block; width: 100%; margin-top: 30px; padding: 15px; border: 1px solid var(--border-strong, #C9D3DD); background: #fff; font-size: 14px; font-weight: 700; letter-spacing: .08em; color: var(--txt); cursor: pointer; }
+  .sp-drawer { padding-bottom: 110px; z-index: 1001; }
+}
+@media (max-width: 900px) { html.sp-open .sp-cta { display: none; } }
