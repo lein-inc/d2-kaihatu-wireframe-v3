@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;700;800&family=Archivo:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/design3.css?v=1">
-<link rel="stylesheet" href="css/v3.css?v=4">
+<link rel="stylesheet" href="css/v3.css?v=5">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/v31c.css?v=10">
 <link rel="stylesheet" href="css/v31c-sub.css?v=1">
@@ -315,7 +315,7 @@
     </div>
   </div>
 </section>
-<script>/* ページ内メニュー：スクロール位置の見出しを現在地に */(function(){var as=[].slice.call(document.querySelectorAll(".pnav a[href^='#']"));var ss=as.map(function(a){return document.getElementById(a.getAttribute("href").slice(1));});function f(){var y=innerHeight*.35,c=-1;ss.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<y)c=i;});as.forEach(function(a,i){a.classList.toggle("cur",i===c);});if(c>=0){var a=as[c],u=a.parentNode.parentNode;u.scrollLeft+=a.getBoundingClientRect().left-u.getBoundingClientRect().left-40;}}addEventListener("scroll",f,{passive:true});f();})();</script>
+<script>/* ページ内メニュー：スクロール位置の見出しを現在地に */(function(){var as=[].slice.call(document.querySelectorAll(".pnav a[href^='#']"));var ss=as.map(function(a){return document.getElementById(a.getAttribute("href").slice(1));});function f(){var y=innerHeight*.35,c=0;ss.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<y)c=i;});as.forEach(function(a,i){a.classList.toggle("cur",i===c);});if(c>=0){var a=as[c],u=a.parentNode.parentNode;u.scrollLeft+=a.getBoundingClientRect().left-u.getBoundingClientRect().left-40;}}addEventListener("scroll",f,{passive:true});f();})();</script>
 <section class="cta3">
   <div class="pair">
     <a href="design31c-contact.html" class="panel biz">
@@ -390,8 +390,8 @@
   if(links.length){
     var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
     var upd=function(){
-      var y=window.scrollY+200,cur=-1;
-      secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+      var y=innerHeight*.35,cur=0;
+      secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<y)cur=i;});
       links.forEach(function(a,i){a.classList.toggle('is-current',i===cur);});
     };
     window.addEventListener('scroll',upd,{passive:true});upd();

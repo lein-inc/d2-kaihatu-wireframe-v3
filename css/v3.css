@@ -262,3 +262,5 @@
 /* パンくず上の余白を詰める */
 .d2-sub .phero.v3 { padding-top: 28px; }
 @media (max-width: 900px) { .d2-sub .phero.v3 { padding-top: 20px; } .d2-sub .phero.v3 .pcrumb { margin-bottom: 14px; } }
+/* ページ内メニュー（sibnav / section-nav）：上にも下と同じ薄い罫線 */
+.sibnav, .d2-sub .section-nav { border-top: 1px solid var(--border); }
