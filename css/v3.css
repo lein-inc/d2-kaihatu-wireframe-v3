@@ -217,3 +217,23 @@
 .sec-head + .qa-cat { margin-top: 8px; }
 .qa-cat .en { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
 @media (max-width: 900px) { #jobs, #career, #first-step, #support, #people, #day, #requirements, #flow, #faq { scroll-margin-top: 120px; } .qa-cat { margin-top: 40px; font-size: 16px; } }
+
+/* ---------- 11/19 事業案内を1ページに統合：事業ごとの区切り見出し・終わりの問い合わせ ---------- */
+.svc-div { padding: 120px 0 0; }
+.svc-div__head { display: flex; align-items: baseline; gap: 22px; border-top: 2px solid var(--blue); padding-top: 26px; }
+.svc-div__head .no { font-family: "Inter", sans-serif; font-weight: 800; font-size: clamp(44px, 5.6vw, 80px); line-height: 1; color: var(--blue); letter-spacing: -.02em; }
+.svc-div__head h2 { font-size: clamp(28px, 3.4vw, 44px); font-weight: 900; letter-spacing: .06em; }
+.svc-div__head .en { margin-left: auto; font-family: "Inter", sans-serif; font-size: 12px; letter-spacing: .22em; color: var(--txt-2); }
+.svc-div__ph { margin-top: 34px; height: clamp(200px, 26vw, 360px); overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); }
+.svc-div__ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.svc-div__end { padding: 8px 0 40px; }
+.svc-div__end .wrap { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.svc-div__back { font-size: 13px; color: var(--txt-2); letter-spacing: .06em; }
+.svc-div__back:hover { color: var(--blue); }
+#svc-top, #survey, #design, #management { scroll-margin-top: 180px; }
+@media (max-width: 900px) {
+  .svc-div { padding-top: 80px; }
+  .svc-div__head { flex-wrap: wrap; gap: 6px 16px; }
+  .svc-div__head .en { margin-left: 0; width: 100%; }
+  #svc-top, #survey, #design, #management { scroll-margin-top: 120px; }
+}
